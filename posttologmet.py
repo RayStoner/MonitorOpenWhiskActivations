@@ -21,7 +21,8 @@ def main(dict):
             space_id    = dict['space_id']
   )
   
-  # parse the incoming data
+  # Parse the incoming data, and create a message dict to send to logmet.
+  ## Any key in the message dictionary will appear as a field in Kibana.
   message = {
     'type': 'openwhisk',
     'origin': 'openwhisk',
@@ -35,6 +36,7 @@ def main(dict):
   if 'logs' in dict:
     message['logs'] = dict['logs']
   
+  # Post the message to logmet
   lm.emit_log(message)
   return {'result':'probably successful'}
 
