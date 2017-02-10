@@ -17,7 +17,7 @@ def main(dict):
   lm = Logmet(
             logmet_host = dict['logmet_host'],
             logmet_port = dict['logmet_port'],
-            token       = dict['logmet_token']
+            token       = dict['logmet_token'],
             space_id    = dict['space_id']
   )
   
