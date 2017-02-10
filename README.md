@@ -1,7 +1,16 @@
-# OpenWhisk Failed Action Notifyer
+# OpenWhisk Failed Activation Notifyer
 
 Simple OpenWhisk action that polls OpenWhisk API, looks for failed activations and triggers a notification for for failed activations
 Activations in every organisation and space that the user has access to in the current region will be scanned
+
+The system has two steps
+    
+    1. getFailedActivations
+       - This action is triggered periodically and scans all activations since last run, looking for failed activations
+       - If a failed activation is found it triggers the notification trigger
+    2. Notification
+       - One or more notification actions are invoked when the notification trigger is fired
+
 
 ## Supported notification channels
 
