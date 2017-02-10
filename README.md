@@ -47,7 +47,12 @@ wsk rule create postfailuretonoi notificationTrigger posttonoi
 wsk action create posttologmet posttologmet.py -p logmet_host <logmet_host> -p logmet_port <logmet_port> -p logmet_token <logmet_token> -p space_id <space_id>
 wsk rule create postfailuretologmet notificationTrigger posttologmet
 ```
+
 To get the logmet token and space id, you can use the ```get_token.py``` script from the [pylogmet](https://github.com/locke105/pylogmet) github repository.
+
+The posttologmet action receives failed activation notification from all activations in all spaces and organisations the current user has access to. However, it will create a logmet entry in a single logmet space, specified by space_id.
+Inside logmet you can filter by 'space_name' and 'org_name' to see where what namespace the failed activation was running in.
+
 
 ## Create the main activation poller action
 ```
