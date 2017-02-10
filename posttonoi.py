@@ -8,6 +8,6 @@ def main(dict):
   else:
     return {'result':'fail', 'status':'missing omnibus url'}
   
-  r = requests.post(omnibusUrl, json=dict, headers={'Content-Type': 'application/json'})
+  r = requests.post(omnibus_url, json=dict, headers={'Content-Type': 'application/json'})
   print r.text
   return {'result':r.json()}
