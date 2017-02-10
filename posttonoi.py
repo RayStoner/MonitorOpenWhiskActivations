@@ -10,4 +10,4 @@ def main(dict):
   
   r = requests.post(omnibus_url, json=dict, headers={'Content-Type': 'application/json'})
   print r.text
-  return {'result':r.json()}
+  return {'result':r.text}
